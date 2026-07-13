@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build":"rm -rf dist && cp -R src dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --watch src/index.js"
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",

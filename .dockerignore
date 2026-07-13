@@ -1,0 +1,42 @@
+# Source control
+.git
+.gitignore
+
+# Package manager caches & local dependencies
+node_modules/
+jspm_packages/
+.npm/
+.yarn/
+vendor/
+.venv/
+ENV/
+
+# Production build outputs
+dist/
+build/
+out/
+target/
+
+# Environment secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+secrets.json
+
+# Local logs and diagnostic data
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+
+# OS-specific metadata files
+.DS_Store
+Thumbs.db
+
+# Docker configuration files (prevents unexpected layer invalidation)
+Dockerfile
+.dockerignore
+docker-compose.yml
