@@ -8,6 +8,7 @@ import path from "path";
 
 import User from "./models/User.js";
 import { connectDB } from "./lib/db.js";
+import job from "./lib/job.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -36,4 +37,7 @@ if(fs.existsSync(publicDir)) {
 app.listen(PORT, () => {
   connectDB();
   console.log(`Server is running on port ${PORT}`);
+
+  if(process.env.NODE_ENV === "production") job.start();
+  
 });
