@@ -34,7 +34,7 @@ COPY server/package*.json ./
 RUN npm install --omit=dev --no-audit --no-fund && npm cache clean --force
 
 
-COPY --from=server-build /app/server/dist ./dist
+COPY --from=server-build /app/dist ./dist
 COPY --from=client-build /app/client/dist ./public
 
 EXPOSE 3001
