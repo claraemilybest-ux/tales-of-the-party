@@ -17,7 +17,7 @@ RUN npm run build
 # --- Stage 2: build the API bundle ---
 #This backend is ESM JavaScript, so npm run build copies src/ to dist/.
 FROM node:22-bookworm-slim AS server-build
-WORKDIR /app/server
+WORKDIR /app
 COPY server/package*.json ./
 RUN npm install --no-audit --no-fund --legacy-peer-deps
 COPY server/ ./
