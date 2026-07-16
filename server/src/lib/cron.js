@@ -1,6 +1,6 @@
 import { CronJob } from "cron";
 import http from "node:http";
-import http from "node:https";
+import https from "node:https";
 
 // every 14 minutes send a Get request to the health endpoint
 const job = new CronJob("*/14 * * * *", function () {
