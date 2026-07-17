@@ -9,7 +9,9 @@ import path from "path";
 import User from "./models/User.js";
 import { connectDB } from "./lib/db.js";
 import job from "./lib/cron.js";
+
 import clerkWebhook from "./webhooks/clerk.js";
+import authRoutes from "./routes/auth.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +29,8 @@ app.use(clerkMiddleware());
 app.get("/health", (req, res) => {
   res.status(200).json({ ok: true });
 });
+
+app.use("/api/auth", authRoutes)
 
 // if public directory exists, serve static files
 // production build
